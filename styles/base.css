@@ -1,0 +1,99 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --descr: #101729;
+    --main: #FBFDFF;
+    --title: #17C1ED;
+    --text: #121D39;
+    --linear: linear-gradient(108deg, #17C2ED 4%, #1C7DD7 95%);
+    --imageBG: #1B8ADB38;
+    --rating: #FFD336;
+    --whatCardBG: #E7F1FC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins/Poppins-Bold.ttf');
+    font-weight: 700;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+body {
+    background: var(--main);
+    /* -webkit-mask: url("../image/hotels/masks/Rectangle 3.png");
+    -webkit-mask-position-x: 80px;
+    -webkit-mask-position-y: 3px;
+    -webkit-mask-repeat: no-repeat; */
+}
+
+.container {
+    /* height: 100%; */
+    max-width: 1240px;
+    width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin: 0 auto;
+}
+
+@media (min-width: 575.98px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .container {
+        max-width: 1240px;
+    }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT A HOUSE - only with us!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <nav class="nav container">
+                <div class="logo">GoRent</div>
+                <ul>
+                    <li class="nav-list"><a class="nav-list__link" href="#!">Home</a></li>
+                    <li class="nav-list"><a class="nav-list__link" href="#!">Featured</a></li>
+                    <li class="nav-list"><a class="nav-list__link" href="#!">Pricing</a></li>
+                    <li class="nav-list"><a class="nav-list__link" href="#!">Contact</a></li>
+                </ul>
+                <div class="reg">
+                    <a href="#!">Sign up</a>
+                    <a href="#!">Login</a>
+                </div>
+            </nav>
+
+            <main class="header-content container">
+                <div class="content">
+                    <div class="dropdown">
+                        <select @click="value" name="countries" id="countries" class="btn">
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="France">France</option>
+                            <!-- <option value="Qatar">Qatar</option> -->
+                        </select>
+                    </div>
+
+                    <div class="descr">
+                        Enjoy A Famous
+                        Hotel With A
+                        Rustic Feel
+                    </div>
+                    <div class="info">
+                        explore the beauty of a beautiful modern hotel and have a good sleep
+                    </div>
+                    <a href="#!" class="link">Learn More</a>
+                </div>
+
+                <div class="right__content">
+                    <img :src="'./image/hotels/' + option + '/main.jpg'" alt="" class="img">
+                </div>
+            </main>
+        </header>
+
+        <main class="main">
+            <div class="container">
+
+                <section class="featured">
+                    <div class="title">
+                        <p>Featured</p>
+                        <p>World's Best Hotel</p>
+                    </div>
+
+
+                    <div class="block" v-for="name, index in countriesInfo[option].names">
+                        <div class="img-block">
+                            <img :src="'./image/hotels/' + option + '/featured-' + (index+1) +'.jpg'" alt=""
+                                class="img">
+                            <span><i class="material-icons">navigate_next</i></span>
+                        </div>
+                        <div class="info">
+                            <div class="title">Hotel {{name}}</div>
+                            <div class="descr">{{countriesInfo[option].descr[index]}}</div>
+                            <a href="#!" class="link">Learn More</a>
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <section class="what">
+
+                    <div class="title2">
+                        <p>What</p>
+                        <p>What Customers Say About Us?</p>
+                    </div>
+
+                    <div class="advertising">
+                        <div class="img-block">
+                            <img :src="'./image/hotels/' + option + '/what-1.jpg'" alt="" class="img">
+                        </div>
+                        <div class="info">
+                            <div class="title">What do customers say about us?</div>
+                            <div class="mini__block">
+                                <div class="ava">
+                                    <img :src="'./image/hotels/' + option + '/reviewer.png'" alt="" class="img">
+                                </div>
+                                <div class="info__block">
+                                    <div class="title">{{countriesInfo[option].reviewerInfo.firstName}}</div>
+                                    <div class="descr">{{countriesInfo[option].reviewerInfo.location}}</div>
+                                </div>
+                            </div>
+                            <div class="descr">Very satisfying service makes it comfortable, a beautiful place in the
+                                world.
+                            </div>
+                            <div class="rating">
+                                <i v-for="num in 5" :data-ratingValue="num"
+                                    :class="num <= countriesInfo[option].reviewerInfo.ratingStats ? 'material-icons active' : 'material-icons'">star</i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about">
+                        <div class="img-block">
+                            <img :src="'./image/hotels/' + option + '/what-2.jpg'" alt="" class="img">
+                        </div>
+
+                        <div class="info">
+                            <div class="title">Prepare Yourself And Start lying down with us.</div>
+
+                            <div class="descr">There's the best discount for you today.</div>
+                            <a href="#!" class="link">Get Started</a>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="footer container">
+            <div class="logo">GoRent</div>
+            <ul>
+                <li class="nav-list"><a class="nav-list__link" href="#!">Home</a></li>
+                <li class="nav-list"><a class="nav-list__link" href="#!">Featured</a></li>
+                <li class="nav-list"><a class="nav-list__link" href="#!">Pricing</a></li>
+                <li class="nav-list"><a class="nav-list__link" href="#!">Contact</a></li>
+            </ul>
+            <div class="reg">
+                <a href="#!">Sign up</a>
+                <a href="#!">Login</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
